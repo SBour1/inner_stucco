@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Chicken Wings",
+    "price": 10.99,
+    "category": "Appetizers",
+    "hasMeat": true,
+    "hasNuts": false
+  },
+  {
+    "name": "Garlic Knots",
+    "price": 5.50,
+    "category": "Appetizers",
+    "hasMeat": false,
+    "hasNuts": false
+  },
+  {
+    "name": "Meat Lover Pizza",
+    "price": 18.99,
+    "category": "Pizza",
+    "hasMeat": true,
+    "hasNuts": false
+  },
+  {
+    "name": "Cheese Pizza",
+    "price": 14.99,
+    "category": "Pizza",
+    "hasMeat": false,
+    "hasNuts": false
+  },
+  {
+    "name": "Cheesecake",
+    "price": 3.50,
+    "category": "Dessert",
+    "hasMeat": false,
+    "hasNuts": false
+  },
+  {
+    "name": "Pistacio Canoli",
+    "price": 4.99,
+    "category": "Dessert",
+    "hasMeat": false,
+    "hasNuts": true
+  }
+]

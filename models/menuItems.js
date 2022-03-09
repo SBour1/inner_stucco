@@ -1,49 +1,39 @@
-const { Model, Datatypes } = require("sequelize");
-const bcrypt = require("bcrypt");
+const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class MenuItem extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class MenuItem extends Model {}
 
 MenuItem.init(
   {
     id: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
     name: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     price: {
-      type: Datatypes.DECIMAL,
+      type: DataTypes.DECIMAL(10,2),
       allowNull: false,
     },
     category: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     hasMeat: {
-        type: Datatypes.BOOLEAN,
+        type: DataTypes.BOOLEAN,
         allowNull: false
     },
     hasNuts: {
-        type: Datatypes.BOOLEAN,
-        allowNull: false
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
     }
   },
   {
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
