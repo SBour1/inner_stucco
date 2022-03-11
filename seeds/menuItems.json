@@ -8,7 +8,7 @@
   },
   {
     "name": "Garlic Knots",
-    "price": 5.50,
+    "price": 5.5,
     "category": "Appetizers",
     "hasMeat": false,
     "hasNuts": false
@@ -29,7 +29,7 @@
   },
   {
     "name": "Cheesecake",
-    "price": 3.50,
+    "price": 3.5,
     "category": "Dessert",
     "hasMeat": false,
     "hasNuts": false
