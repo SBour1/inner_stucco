@@ -5,7 +5,7 @@ let zip = document.querySelector('zipcode').val();
 
 var options = {
   method: "GET",
-  url: `https://redline-redline-zipcode.p.rapidapi.com/rest/distance.json/08057/` + zip + `/mile`,
+  url: `https://redline-redline-zipcode.p.rapidapi.com/rest/distance.json/19111/` + zip + `/mile`,
   headers: {
     "x-rapidapi-host": "redline-redline-zipcode.p.rapidapi.com",
     "x-rapidapi-key": API_KEY,
@@ -29,3 +29,5 @@ axios
   .catch(function (error) {
     res.status(500).json(error);
   });
+
+module.exports = router;
