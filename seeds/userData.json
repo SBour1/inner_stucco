@@ -1,17 +1,17 @@
 [
-    {
-        "name": "Steve",
-        "email": "bourpower@gmail.com",
-        "password": "password"
-    },
-    {
-        "name": "Titus",
-        "email": "titus@gmail.com",
-        "password": "password"
-    },
-    {
-        "name": "Radhika",
-        "email": "radhika@gmail.com",
-        "password": "password"
-    }
+  {
+    "name": "Steve",
+    "email": "bourpower@gmail.com",
+    "password": "password"
+  },
+  {
+    "name": "Titus",
+    "email": "titus@gmail.com",
+    "password": "password"
+  },
+  {
+    "name": "Radhika",
+    "email": "radhika@gmail.com",
+    "password": "password"
+  }
 ]
