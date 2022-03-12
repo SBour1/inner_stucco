@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-const cart = require("../db/cart");
+const cart = require("../../db/cart.json");
 
 router.post("/login", async (req, res) => {
   try {

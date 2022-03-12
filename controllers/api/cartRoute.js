@@ -1,13 +1,13 @@
 const path = require('path');
 const router = require('express').Router();
 const fs = require('fs');
-const cart = require('../db/cart')
+const cart = require('../../db/cart.json')
 
 var newItem = []
 
-fs.readFile(path.join(__dirname,cart), 'utf8', (err,data) => {
-    newItem = JSON.parse(data)
-})
+// fs.readFile(path.join(__dirname,cart), 'utf8', (err,data) => {
+//     newItem = JSON.parse(data)
+// })
 
 router.get('/cart', (req, res) => {
     res.json(newItem)
