@@ -32,6 +32,14 @@ MenuItem.init(
       allowNull: false,
       defaultValue: false,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     sequelize,
