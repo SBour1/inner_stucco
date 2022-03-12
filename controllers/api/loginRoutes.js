@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const cart = require("../db/cart");
 
 router.post("/login", async (req, res) => {
   try {
@@ -34,10 +35,12 @@ router.post("/login", async (req, res) => {
 
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
+    emptyCart = [];
+    FileSystem.writeFileSync(cart, JSON.stringify(emptyCart));
+    cart = emptyCart;
     req.session.destroy(() => {
       res.status(204).end();
     });
-    etw;
   } else {
     res.status(404).end();
   }
