@@ -1,56 +1,49 @@
-[
+const { menuItems } = require('../models');
+
+const menuItemsdata =[
   {
     "name": "Chicken Wings",
     "price": 10.99,
-    "category": "Appetizers",
-    "hasMeat": true,
-    "hasNuts": false,
+    "category_id": 1,
     "filename": "wings.jpg",
     "description": "Chicken wing drums and flats, deep fried and tossed in a spicy buffalo sauce."
   },
   {
     "name": "Garlic Knots",
     "price": 5.59,
-    "category": "Appetizers",
-    "hasMeat": false,
-    "hasNuts": false,
+    "category_id": 1,
     "filename": "garlicknots.jpg",
     "description": "Bread tied in knots and baked covered in a butter garlic and parsley spread."
   },
   {
     "name": "Meat Lover Pizza",
     "price": 18.99,
-    "category": "Pizza",
-    "hasMeat": true,
-    "hasNuts": false,
+    "category_id": 2,
     "filename": "meatloverpizza.jpg",
     "description": "A large pizza covered with sausage, pepperoni, bacon, and chunks of hamburger."
   },
   {
     "name": "Cheese Pizza",
     "price": 14.99,
-    "category": "Pizza",
-    "hasMeat": false,
-    "hasNuts": false,
+    "category_id": 2,
     "filename": "cheesepizza.jpg",
     "description": "A large pizza with nothing interesting on it. At all."
   },
   {
     "name": "Cheesecake",
     "price": 3.59,
-    "category": "Dessert",
-    "hasMeat": false,
-    "hasNuts": false,
+    "category_id": 3,
     "filename": "cheesecake.jpg",
     "description": "A savory slice of cheesecake topped with whipped cream, strawberries, and a strawberry sauce."
   },
   {
     "name": "Pistacio Cannoli",
     "price": 4.99,
-    "category": "Dessert",
-    "hasMeat": false,
-    "hasNuts": true,
+    "category_id": 3,
     "filename": "cannoli.jpg",
     "description": "A large italian cannoli filled with pistacio flavored cream and garnished with crushed pistacios."
-  }
-]
+  },
+];
+const seedmenuItems = () => menuItems.bulkCreate(menuItemsdata);
+
+module.exports = seedmenuItems;
