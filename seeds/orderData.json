@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Chicken Wings",
+      "category": "Appetizers",
+      "description": "Chicken wing drums and flats, deep fried and tossed in a spicy buffalo sauce."
+    },
+    {
+      "name": "Garlic Knots",
+      "category": "Appetizers",
+      "description": "Bread tied in knots and baked covered in a butter garlic and parsley spread."
+    },
+    {
+      "name": "Meat Lover Pizza",
+      "category": "Pizza",
+      "description": "A large pizza covered with sausage, pepperoni, bacon, and chunks of hamburger."
+    }
+  ]

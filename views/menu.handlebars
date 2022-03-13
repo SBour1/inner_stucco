@@ -1,4 +1,20 @@
-<section class="container">
+{{#if loggedIn}}
+<section class="menuItems">
+  <img src="/images/{{menuItems.filename}}" alt="{{menuItems.description}}">
+  <div class="menuItems-details">
+    <h3>{{menuItem.name}}</h3>
+    <p> {{menuItem.price}}</p>
+  </div>
+</section>
+{{else}}
+<a href="/login"></a>
+{{/if}}
+
+
+
+
+
+{{!-- <section class="container">
     <h3 class="menu-name">{{menu.name}}</h3>
     <section class="flex-row justify-center">
         {{#each menu.items as |item|}}
@@ -11,4 +27,4 @@
         {{/if}}
         {{/each}}
     </section>
-</section>
+</section> --}}

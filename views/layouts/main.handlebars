@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Pizza Restraunt webpage</title>
     <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+    <link rel="stylesheet" type="text/css" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -17,36 +18,36 @@
             <div>Your total points is: 0</div>
         </header>
         <nav class="navbar p-3 p-md-4 justify-content-center">
-            <a href="/" class="" >Location</a>
-            <a href="/" class="" >Menu</a>
-            <a href="/" class="" >About US</a>
-            <a href="/" class="" >Map</a>
-            <a href="/" class="" >Contact Us</a>
-            <a href="/mail" class="" >Send Mail</a>
+            <a href="/" class="">Location</a>
+            <a href="/" class="">Menu</a>
+            <a href="/" class="">About US</a>
+            <a href="/" class="">Map</a>
+            <a href="/" class="">Contact Us</a>
+            <a href="/mail" class="">Send Mail</a>
             <a href="/My Order" class="">My Order</a>
-
-            {{!-- {{#if logged_in}}
-            <a class="" id="logout" title="Log out of your account">Log Out</a>
+            {{#if loggedIn}}
+            <button id="logout" class="btn-no-style">Logout</button>
             {{else}}
-            <a href="/login" class="" title="Log into your account">Log In</a>
-            {{/if}} --}}
+            <!-- Otherwise, show a link to login -->
+            <a href="/login">Login</a>
+            {{/if}}
         </nav>
     </div>
-  
-    <main class="">
+
+    <main class="category">
         {{{body}}}
     </main>
 
 </body>
 
-    {{!-- {{#if loggedIn}}
-    <script src="/js/dist/logout.js"></script>
-    {{/if}} --}}
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}} 
 
-    <!-- Footer -->
-    <footer class="fixed-bottom bg-dark p-4 p-md-5 mt-5">
-        <h4 class="text-white text-center">&copy; Pizza Restraunt webpage</h4>
-    </footer>
+<!-- Footer -->
+{{!-- <footer class="fixed-bottom p-4 p-md-5 mt-5">
+    <h4 class="text-white text-center">&copy; Pizza Restraunt webpage</h4>
+</footer> --}}
 </body>
 
 </html>

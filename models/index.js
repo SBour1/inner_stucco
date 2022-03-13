@@ -1,4 +1,13 @@
-const MenuItem = require("./menuItems");
-const User = require("./user");
+const user = require('./user');
+const Category = require('./Category');
+const menuItems = require('./menuItems');
 
-module.exports = { MenuItem, User };
+Category.hasMany(menuItems, {
+  foreignKey: 'category_id',
+});
+
+menuItems.belongsTo(Category, {
+  foreignKey: 'category_id',
+});
+
+module.exports = { user, Category, menuItems };
