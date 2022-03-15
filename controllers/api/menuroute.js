@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { response } = require("express");
 const { MenuItem } = require("../../models");
+const withAuth = require('../utils/auth');
 
-router.get("/menu", async (req, res) => {
+router.get("/menu", withAuth, async (req, res) => {
   try {
     const menuData = await MenuItem.findAll({});
 
@@ -14,7 +15,7 @@ router.get("/menu", async (req, res) => {
   }
 });
 
-router.get("/menu/:id", async (req, res) => {
+router.get("/menu/:id", withAuth,async (req, res) => {
   try {
     const item = await MenuItem.findByPk(req.params.id);
 
