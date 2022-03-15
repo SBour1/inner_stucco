@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -25,16 +26,16 @@ menuItems.init(
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'category',
-        key: 'id',
+        model: "category",
+        key: "id",
       },
+    },
   },
-},
   {
     sequelize,
     timestamps: false,
@@ -45,24 +46,6 @@ menuItems.init(
 );
 
 module.exports = menuItems;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const { Model, DataTypes } = require("sequelize");
 // const sequelize = require("../config/connection");
