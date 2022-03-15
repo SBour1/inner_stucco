@@ -11,17 +11,22 @@ Order.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    menu_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'menuItem',
+        key: 'id'
+      }
     },
-    description: {
-      type: DataTypes.STRING,
-    },
-    order_item: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
+    // description: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // order_item: {
+    //   type: DataTypes.FLOAT,
+    //   // price? should be decimal (10,2)
+    //   allowNull: false,
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

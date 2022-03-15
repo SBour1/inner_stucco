@@ -1,3 +1,30 @@
+const router = require('express').Router();
+const { menuItems } = require('../../models');
+const Order = require('../../models/Order');
+
+router.post('/', async (req, res) => {
+  try {
+    var orderData = await Order.create(req.body);
+    console.log(orderData);
+    res.status(200).json(orderData);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    var orderItems = await Order.findAll({
+      include: [menuItems],
+    });
+    res.status(200).json(orderItems);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+module.exports = router;
+
 // const router = require('express').Router();
 // require("dotenv").config();
 // const axios = require("axios").default;

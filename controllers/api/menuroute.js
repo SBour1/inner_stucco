@@ -1,32 +1,31 @@
-const router = require("express").Router();
-const { response } = require("express");
-const { MenuItem } = require("../../models");
+const router = require('express').Router();
+const { menuItems } = require('../../models');
 
-router.get("/menu", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const menuData = await MenuItem.findAll({});
+    const menuData = await menuItems.findAll({});
 
     const menu = menuData.map((items) => items.get({ plain: true }));
 
-    res.render("menu", { menu });
+    res.render('menu', { menu });
+    res.status(200).json(menu);
   } catch (error) {
     res.status(500).json(error);
   }
 });
 
-router.get("/menu/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const item = await MenuItem.findByPk(req.params.id);
+    const item = await menuItems.findByPk(req.params.id);
 
     if (!item) {
-      res.status(404).json({ message: "No item found" });
+      res.status(404).json({ message: 'No item found' });
       return;
     }
-
     res.status(200).json(item);
   } catch (error) {
     res.status(500).json(error);
   }
 });
-//
+
 module.exports = router;
