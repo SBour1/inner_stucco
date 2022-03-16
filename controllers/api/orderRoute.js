@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { menuItems } = require('../../models');
-const Order = require('../../models/Order');
+const { menuItems, Cart } = require('../../models');
+// const Order = require('../../models/Order');
 
 router.post('/', async (req, res) => {
   try {
-    var orderData = await Order.create(req.body);
+    var orderData = await Cart.create(req.body);
     console.log(orderData);
     res.status(200).json(orderData);
   } catch (error) {
@@ -14,8 +14,8 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
-    var orderItems = await Order.findAll({
-      include: [menuItems],
+    var orderItems = await Cart.findAll({
+      include: [{ model: menuItems }]
     });
     res.status(200).json(orderItems);
   } catch (error) {
