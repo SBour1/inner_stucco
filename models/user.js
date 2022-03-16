@@ -28,6 +28,14 @@ user.init(
         isEmail: true,
       },
     },
+    zipCode: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      isNumeric: true,
+      validate: {
+        len: [5]
+      }
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

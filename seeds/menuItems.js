@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const { menuItems } = require('../models');
 
 const menuItemsdata =[
