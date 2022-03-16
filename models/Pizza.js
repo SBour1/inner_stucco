@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Apetizer extends Model {}
+class Pizza extends Model {}
 
-Apetizer.init(
+Pizza.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -42,8 +42,8 @@ Apetizer.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'apetizer',
+    modelName: 'pizza',
   }
 );
 
-module.exports = Apetizer;
+module.exports = Pizza;

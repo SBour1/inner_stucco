@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { Category, menuItems } = require('../models');
 const Apetizer = require('../models/Apetizer');
-
+const Pizza = require('../models/Pizza');
+const Dessert = require('../models/Dessert');
+const withAuth = require('../utils/auth');
 
 // route to get all apetizers
 // router.get('/', async (req, res) => {
@@ -20,6 +22,26 @@ router.get('/category/:id', async (req, res) => {
       const apetizers = apetizerData.map((apetizer) => apetizer.get({ plain: true }));
       res.render('Apetizer', { apetizers });
       console.log(apetizers)
+
+
+      const pizzaData = await Pizza.findAll()
+
+  
+      const pizza = pizzaData.map((pizza) => pizza.get({ plain: true }));
+      res.render('Pizza', { pizza });
+      console.log(apetizers)
+
+
+      const dessertData = await Dessert.findAll()
+
+  
+      const dessert = dessertData.map((dessert) => dessert.get({ plain: true }));
+      res.render('Dessert', { dessert });
+      console.log(apetizers)
+
+
+      
+
     
       // const apetizerData = await Apetizer.findByPk(req.params.id);
       // if(!apetizerData) {
@@ -59,7 +81,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-
+//get one category
 router.get('/category/:id', async (req, res) => {
   try {
     const dbCategoryData = await Category.findByPk(req.params.id, {

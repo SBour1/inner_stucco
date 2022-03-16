@@ -1,4 +1,28 @@
 
+<section class="container">
+  <h3 class="category-name">{{category.name}}</h3>
+    {{#if loggedIn}}
+  <section class="flex-row justify-center">
+    {{#each category.menuItems as |menuItem|}}
+    {{> menuItem-details}}
+    {{/each}}
+  </section>
+</section> 
+<!-- Otherwise, provide a link to login -->
+{{else}}
+<a href="/login">You must login to Order</a>
+{{/if}}
+
+
+
+
+
+
+
+
+
+
+{{!-- 
 <div class="container">
 
   {{#each apetizers as |apetizer|}}
@@ -10,8 +34,8 @@
   </div>
   
   <div class="col-md-3">
-    {{#if apetizer.has_nuts}} Contains nuts {{else}} No nuts {{/if}}
+    {{#if apetizer.hasNuts}} Contains nuts {{else}} No nuts {{/if}}
      {{#if apetizer.hasMeat}} Contains Meat {{else}} No Meat {{/if}}
   </div>
   {{/each}}
-  </div>
+  </div> --}}

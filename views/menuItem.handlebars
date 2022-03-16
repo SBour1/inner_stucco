@@ -1,4 +1,26 @@
-<section class="card">
+
+{{#if loggedIn}}
+<section class="painting">
+  <img src="/images/{{menuItem.filename}}" alt="{{menuItem.description}}">
+  <div class="painting-details">
+    <h3>{{menuItem.name}}</h3>
+    <p>{{menuItem.price}}</p>
+      <p>{{menuItem.description}}</p>
+  </div>
+</section>
+<!-- Otherwise, provide a link to login -->
+{{else}}
+<a href="/login">please login to order</a>
+{{/if}}
+
+
+
+
+
+
+
+
+{{!-- <section class="card">
   <a href="/menuItemId/{{id}}">
     <header>{{name}}</header>
 
@@ -27,4 +49,4 @@
   <div class="col-md-3">
     {{#if menuItems.has_nuts}} Contains nuts {{else}} No nuts {{/if}}
   </div>
-  {{/each}}
+  {{/each}} --}}
