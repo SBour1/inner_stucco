@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Order extends Model {}
+class Apetizer extends Model {}
 
-Order.init(
+Apetizer.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -17,30 +17,33 @@ Order.init(
     },
     description: {
       type: DataTypes.STRING,
-    },
-    order_item: {
-      type: DataTypes.FLOAT,
       allowNull: false,
     },
-    order_date: {
-      type: DataTypes.DATE,
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
+    },
+    hasMeat: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
   },
-    user_id: {
+    has_nuts: {
+      type: DataTypes.BOOLEAN,
+    },
+    category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'category',
         key: 'id',
       },
-    },
   },
+},
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'order',
+    modelName: 'apetizer',
   }
 );
 
-module.exports = Order;
+module.exports = Apetizer;
