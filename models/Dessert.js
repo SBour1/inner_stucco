@@ -1,9 +1,9 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-class menuItems extends Model { }
+class Dessert extends Model {}
 
-menuItems.init(
+Dessert.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,27 +15,20 @@ menuItems.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    filename: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     hasMeat: {
       type: DataTypes.BOOLEAN,
       allowNull: false
-    },
+  },
     hasNuts: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
-
     },
     category_id: {
       type: DataTypes.INTEGER,
@@ -43,15 +36,14 @@ menuItems.init(
         model: 'category',
         key: 'id',
       },
-    },
   },
+},
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "menuItems",
+    modelName: 'dessert',
   }
 );
 
-module.exports = menuItems;
+module.exports = Dessert;

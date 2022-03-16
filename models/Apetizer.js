@@ -27,7 +27,7 @@ Apetizer.init(
       type: DataTypes.BOOLEAN,
       allowNull: false
   },
-    has_nuts: {
+    hasNuts: {
       type: DataTypes.BOOLEAN,
     },
     category_id: {

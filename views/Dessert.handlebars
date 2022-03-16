@@ -1,0 +1,32 @@
+<div class='menu-container'>
+  <div class='card-header col-md-12 d-flex flex-wrap'>
+    <h2>
+      Dessert Menu
+    </h2>
+  </div>
+  {{#each desserts as |dessert|}}
+  <div class="row">
+    <div class='col-sm'>
+      <p>
+        {{dessert.id}}.
+      {{dessert.name}}
+      </p>
+    </div>
+ <div class='col-sm'>
+      <p>
+    
+        {{dessert.description}}
+      </p>
+    </div>
+     <div class='col-sm'>
+      <p>
+      {{dessert.price}}
+      
+      </p>
+    </div>
+   <div class="col-sm">
+    🥜: {{#if dish.hasNuts}} Contains nuts {{else}} No nuts {{/if}}
+  </div>
+    <button class="btn-no-style">Add to cart</button>
+     </div>
+  {{/each}}
