@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { Category, menuItems } = require('../models');
 const Apetizer = require('../models/Apetizer');
-const Pizza = require('../models/Pizza');
-const Dessert = require('../models/Dessert');
 const withAuth = require('../utils/auth');
 
 // route to get all apetizers
@@ -14,46 +12,26 @@ const withAuth = require('../utils/auth');
 //         res.render('Apetizer', { apetizers });
 //       });
 
-router.get('/category/:id', async (req, res) => {
-  try{ 
-    const apetizerData = await Apetizer.findAll()
+// router.get('/category/:id', async (req, res) => {
+//   try{ 
+//     const apetizerData = await Apetizer.findAll()
 
   
-      const apetizers = apetizerData.map((apetizer) => apetizer.get({ plain: true }));
-      res.render('Apetizer', { apetizers });
-      console.log(apetizers)
-
-
-      const pizzaData = await Pizza.findAll()
-
-  
-      const pizza = pizzaData.map((pizza) => pizza.get({ plain: true }));
-      res.render('Pizza', { pizza });
-      console.log(apetizers)
-
-
-      const dessertData = await Dessert.findAll()
-
-  
-      const dessert = dessertData.map((dessert) => dessert.get({ plain: true }));
-      res.render('Dessert', { dessert });
-      console.log(apetizers)
-
-
-      
-
+//       const apetizers = apetizerData.map((apetizer) => apetizer.get({ plain: true }));
+//       res.render('Apetizer', { apetizers });
+//       console.log(apetizers)
     
-      // const apetizerData = await Apetizer.findByPk(req.params.id);
-      // if(!apetizerData) {
-      //     res.status(404).json({message: 'No apetizer with this id!'});
-      //     return;
-      // }
-      // const apetizer = apetizerData.get({ plain: true });
-      // res.render('apetizer', apetizer);
-    } catch (err) {
-        res.status(500).json(err);
-    };     
-});
+//       // const apetizerData = await Apetizer.findByPk(req.params.id);
+//       // if(!apetizerData) {
+//       //     res.status(404).json({message: 'No apetizer with this id!'});
+//       //     return;
+//       // }
+//       // const apetizer = apetizerData.get({ plain: true });
+//       // res.render('apetizer', apetizer);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     };     
+// });
 
 // GET all categories for homepage
 router.get('/', async (req, res) => {
@@ -81,7 +59,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//get one category
+// GET one category
 router.get('/category/:id', async (req, res) => {
   try {
     const dbCategoryData = await Category.findByPk(req.params.id, {
@@ -91,7 +69,8 @@ router.get('/category/:id', async (req, res) => {
           attributes: [
             'id',
             'name',
-            'price',
+            'hasMeat',
+            'hasNuts',
             'filename',
             'description',
           ],
@@ -100,7 +79,7 @@ router.get('/category/:id', async (req, res) => {
     });
 
     const category = dbCategoryData.get({ plain: true });
-   
+    // Send over the 'loggedIn' session variable to the 'category' template
     res.render('category', { category, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -108,13 +87,54 @@ router.get('/category/:id', async (req, res) => {
   }
 });
 
-router.get('/menuItems/:id', async (req, res) => {
+
+
+
+
+//get one Apetizer
+// router.get('/category/:id', async (req, res) => {
+//   try {
+//     const dbApetizerData = await Apetizer.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Apetizer,
+//           attributes: [
+//             'id',
+//             'Apetizer_name',
+//             'price',
+//             'description',
+//           ],
+//         },
+//       ],
+//     });
+
+//     const category = dbApetizerData.get({ plain: true });
+   
+//     res.render('category', { category, loggedIn: req.session.loggedIn });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
+
+// // route to get menuItems
+// router.get('/', async (req, res) => {
+//   const menuItemData = await menuItems.findAll().catch((err) => { 
+//       res.json(err);
+//     });
+//       const menuItems = menuItemData.map((menuItem) => menuItem.get({ plain: true }));
+//       res.render('menuItem', { menuItems });
+//     });
+
+
+    //get one menuItem
+router.get('/menuItem/:id', async (req, res) => {
   try {
-    const dbmenuItemsData = await menuItems.findByPk(req.params.id);
+    const dbmenuItemData = await menuItem.findByPk(req.params.id);
 
-    const menuItems = dbmenuItemsData.get({ plain: true });
+    const menuItem = dbmenuItemData.get({ plain: true });
 
-    res.render('menuItems', { menuItems, loggedIn: req.session.loggedIn });
+    res.render('menuItem', { menuItem, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -142,6 +162,5 @@ router.get("/signup", (req, res) => {
 
   res.render('signup');
 })
-
 
 module.exports = router;

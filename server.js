@@ -14,8 +14,10 @@ const sequelize = require("./config/connection");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const { SECRET } = process.env;
 require('dotenv').config();
+
+const { SECRET } = process.env;
+
 
 const sess = {
   secret: 'SECRET',

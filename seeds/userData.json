@@ -2,19 +2,19 @@
   {
     "username": "Steve",
     "email": "bourpower@gmail.com",
-    "password": "password",
-    "zipCode": 12345
+    "password": "password"
+  
   },
   {
     "username": "Titus",
     "email": "titus@gmail.com",
-    "password": "password",
-    "zipCode": 12345
+    "password": "password"
+
   },
   {
     "username": "Radhika",
     "email": "radhika@gmail.com",
-    "password": "password",
-    "zipCode": 12345
+    "password": "password"
+  
   }
 ]
