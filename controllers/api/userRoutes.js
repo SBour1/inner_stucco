@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// Confirm username is unique
 router.post('/signup-username', async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -9,9 +10,9 @@ router.post('/signup-username', async (req, res) => {
       },
     });
 
+    // If username is not matched in database
     if (userData === null) {
       res.status(200).json({ message: 'Username is unique' });
-
       return;
     } else {
       res.status(500).json({ message: 'Username is not unique' });
@@ -31,9 +32,9 @@ router.post('/signup-email', async (req, res) => {
       },
     });
 
+    // If email is not matched in database
     if (!userData) {
       res.status(200).json({ message: 'Email is unique' });
-
       return;
     } else {
       res.status(500).json({ message: 'Email is not unique' });
@@ -121,7 +122,6 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// Query to check if user is signed in before showing comment fields
 router.post('/signed-in', (req, res) => {
   if (req.session.loggedIn) {
     res.status(200).json('Success');

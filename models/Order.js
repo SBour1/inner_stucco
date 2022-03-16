@@ -11,20 +11,6 @@ Cart.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // menu_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'menuItems',
-    //     key: 'id'
-    //   }
-    // },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id',
-    //   },
-    // },
   },
   {
     sequelize,

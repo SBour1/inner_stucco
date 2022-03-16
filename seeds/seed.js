@@ -1,5 +1,6 @@
 const sequelize = require('../config/connection');
 const seedCategory = require('./categoryData');
+const seedApetizer = require('./apetizerData')
 const seedmenuItems = require('./menuItems');
 const userData = require('./userData.json');
 const { user} = require('../models');
@@ -12,6 +13,9 @@ const seedAll = async () => {
   await seedCategory();
 
   await seedmenuItems();
+
+ 
+  await seedApetizer();
 
   process.exit(0);
 };

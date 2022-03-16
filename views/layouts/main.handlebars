@@ -14,23 +14,30 @@
     <div class="">
         <header class="d-flex align-items-center justify-content-around">
 
-            <h1 class="">Pizza Restraunt webpage</h1>
-            <div>Your total points is: 0</div>
+            <h1 class="">STUCCO'S PIZZERIA</h1>
+              {{!-- <h2>Welcome, {{username}}!</h2> --}}
+            {{!-- <div>Your total points is: 0</div> --}}
         </header>
         <nav class="navbar p-3 p-md-4 justify-content-center">
-            <a href="/" class="">Location</a>
-            <a href="/" class="">Menu</a>
-            <a href="/" class="">About US</a>
-            <a href="/" class="">Map</a>
-            <a href="/" class="">Contact Us</a>
-            <a href="/mail" class="">Send Mail</a>
-            <a href="/My Order" class="">My Order</a>
-            {{#if loggedIn}}
+            <a href="/" class="text-white">Home</a>
+            <a href="/" class="text-white">Location</a>
+            <a href="/menu" class="text-white">Menu</a>
+            <a href="/" class="text-white">About US</a>
+            <a href="/" class="text-white">Map</a>
+            <a href="/" class="text-white">Contact Us</a>
+            <a href="/mail" class="text-white">Send Mail</a>
+            <a href="/login" class="text-white">My Order</a>
+             {{#if loggedIn}}
+                    <a class="text-white" id="logout">Log Out</a>
+                {{else}}
+                    <a href="/login" class="text-white">Log In</a>
+                {{/if}}
+            {{!-- {{#if loggedIn}}
             <button id="logout" class="btn-no-style">Logout</button>
             {{else}}
             <!-- Otherwise, show a link to login -->
             <a href="/login">Login</a>
-            {{/if}}
+            {{/if}} --}}
         </nav>
     </div>
 
@@ -44,10 +51,6 @@
 <script src="/js/logout.js"></script>
 {{/if}} 
 
-<!-- Footer -->
-{{!-- <footer class="fixed-bottom p-4 p-md-5 mt-5">
-    <h4 class="text-white text-center">&copy; Pizza Restraunt webpage</h4>
-</footer> --}}
 </body>
 
 </html>
