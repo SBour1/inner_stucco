@@ -4,11 +4,14 @@ const menuItems = require('./menuItems');
 const Apetizer = require('./Apetizer');
 const Cart = require('./Order');
 
-Category.hasMany(menuItems);
+Category.hasMany(menuItems, {
+    foreignKey: 'category_id',
+  });
 
-menuItems.belongsTo(Category);
+  menuItems.belongsTo(Category, {
+    foreignKey: 'category_id',
+  });
 
-module.exports = { user, Category, menuItems, Apetizer };
 Cart.belongsTo(user);
 
 Cart.belongsTo(menuItems);
@@ -17,4 +20,4 @@ menuItems.hasMany(Cart);
 
 user.hasMany(Cart);
 
-module.exports = { user, Category, menuItems, Cart };
+module.exports = { user, Category, menuItems, Cart, Apetizer};

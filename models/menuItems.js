@@ -28,7 +28,6 @@ menuItems.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-<<<<<<< HEAD
     hasMeat: {
       type: DataTypes.BOOLEAN,
       allowNull: false
@@ -46,15 +45,6 @@ menuItems.init(
         key: 'id',
       },
     },
-=======
-    // category_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "category",
-    //     key: "id",
-    //   },
-    // },
->>>>>>> 72a6709a45319b8eeb3c8c48c7dd839b54d1bbfe
   },
   {
     sequelize,
@@ -65,8 +55,4 @@ menuItems.init(
   }
 );
 
-<<<<<<< HEAD
 module.exports = menuItems;
-=======
-module.exports = menuItems;
->>>>>>> 72a6709a45319b8eeb3c8c48c7dd839b54d1bbfe
