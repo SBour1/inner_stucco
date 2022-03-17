@@ -70,14 +70,15 @@ router.post('/signup-create', async (req, res) => {
 // Log in
 router.post('/login', async (req, res) => {
     try {
+      console.log(req.body);
         const userData = await User.findOne({
           where: {
-            email: req.body.email,
+            email: req.body.email
           },
         });
-    
+    console.log(userData);
         // If email is not matched in database
-        if (!userData) {
+        if (userData === null) {
           res
             .status(400)
             .json({ message: 'Incorrect email or password. Please try again!' });
@@ -86,7 +87,7 @@ router.post('/login', async (req, res) => {
     
         // Checks submitted password against databse
         const validPassword = await userData.checkPassword(req.body.password);
-    
+    console.log(validPassword);
         // If password is not matched
         if (!validPassword) {
           res
@@ -108,6 +109,7 @@ router.post('/login', async (req, res) => {
             });
         });
       } catch (err) {
+        console.log(err);
         res.status(500).json(err);
       }
 })
