@@ -22,8 +22,8 @@ async function signupFormHandler(event) {
       console.log('success');
       document.location.replace('/');
     } else {
-      alert(response.statusText);
-      // alert('User already exists');
+      // alert(response.statusText);
+      alert('User already exists');
       // console.log("User already exists");
     }
   }
