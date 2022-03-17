@@ -26,7 +26,7 @@ Dessert.init(
     hasMeat: {
       type: DataTypes.BOOLEAN,
       allowNull: false
-  },
+    },
     hasNuts: {
       type: DataTypes.BOOLEAN,
     },
@@ -36,8 +36,8 @@ Dessert.init(
         model: 'category',
         key: 'id',
       },
+    },
   },
-},
   {
     sequelize,
     freezeTableName: true,

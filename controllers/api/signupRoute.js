@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 
-const router = require("express").Router();
-const { User } = require("../../models");
-const bcrypt = require("bcrypt");
+const router = require('express').Router();
+const { User } = require('../../models');
+const bcrypt = require('bcrypt');
 
-router.post("/signup", async (req, res, next) => {
+router.post('/signup', async (req, res, next) => {
   bcrypt
     .hash(req.body.password, 10)
     .then((hash) => {
@@ -14,7 +15,7 @@ router.post("/signup", async (req, res, next) => {
       });
       User.save().then((result) => {
         res.status(201).json({
-          message: "Account Created",
+          message: 'Account Created',
           result: result,
         });
       });

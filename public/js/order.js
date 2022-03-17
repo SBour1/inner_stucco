@@ -1,29 +1,29 @@
 // DOM declarations
-const newComment = document.querySelector("#new-comment");
-const commentForm = document.querySelector("#comment-form");
-const commentFormContainer = document.querySelector("#comment-form-container");
+const newComment = document.querySelector('#new-comment');
+const commentForm = document.querySelector('#comment-form');
+const commentFormContainer = document.querySelector('#comment-form-container');
 
 // API call to check if user is still signed in before showing comment form
 const checkSignedIn = async () => {
-    const response = await fetch('/api/users/signed-in', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
+  const response = await fetch('/api/users/signed-in', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-    if (response.ok) {
-        // Displays comment form once user is confirmed as signed in
-        commentFormContainer.classList.remove("hide");
-        newComment.classList.add("hide");
-    } else {
-        // Redirects user to sign in page
-        document.location.replace("/login");
-    }
-}
+  if (response.ok) {
+    // Displays comment form once user is confirmed as signed in
+    commentFormContainer.classList.remove('hide');
+    newComment.classList.add('hide');
+  } else {
+    // Redirects user to sign in page
+    document.location.replace('/login');
+  }
+};
 
 // Assigns checkSignedIn to "New Comment" button
-newComment.addEventListener("click", checkSignedIn);
+newComment.addEventListener('click', checkSignedIn);
 
 // Function to submit new comment info to server
 // const submitComment = async (event) => {
@@ -56,4 +56,4 @@ newComment.addEventListener("click", checkSignedIn);
 // }
 
 // Assigns submitComment to form for submission event
-commentForm.addEventListener("submit", submitComment);
+commentForm.addEventListener('submit', submitComment);

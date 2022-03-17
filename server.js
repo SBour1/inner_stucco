@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 3001;
 
 require('dotenv').config();
 
+// eslint-disable-next-line no-unused-vars
 const { SECRET } = process.env;
 
 

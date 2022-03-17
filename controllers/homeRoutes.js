@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-use-before-define */
 const router = require('express').Router();
 const { Category, menuItems } = require('../models');
 const Apetizer = require('../models/Apetizer');
@@ -5,7 +7,7 @@ const withAuth = require('../utils/auth');
 
 // route to get all apetizers
 // router.get('/', async (req, res) => {
-//     const apetizerData = await Apetizer.findAll().catch((err) => { 
+//     const apetizerData = await Apetizer.findAll().catch((err) => {
 //         res.json(err);
 //       });
 //         const apetizers = apetizerData.map((apetizer) => apetizer.get({ plain: true }));
@@ -13,14 +15,14 @@ const withAuth = require('../utils/auth');
 //       });
 
 // router.get('/category/:id', async (req, res) => {
-//   try{ 
+//   try{
 //     const apetizerData = await Apetizer.findAll()
 
-  
+
 //       const apetizers = apetizerData.map((apetizer) => apetizer.get({ plain: true }));
 //       res.render('Apetizer', { apetizers });
 //       console.log(apetizers)
-    
+
 //       // const apetizerData = await Apetizer.findByPk(req.params.id);
 //       // if(!apetizerData) {
 //       //     res.status(404).json({message: 'No apetizer with this id!'});
@@ -30,7 +32,7 @@ const withAuth = require('../utils/auth');
 //       // res.render('apetizer', apetizer);
 //     } catch (err) {
 //         res.status(500).json(err);
-//     };     
+//     };
 // });
 
 // GET all categories for homepage
@@ -109,7 +111,7 @@ router.get('/category/:id', async (req, res) => {
 //     });
 
 //     const category = dbApetizerData.get({ plain: true });
-   
+
 //     res.render('category', { category, loggedIn: req.session.loggedIn });
 //   } catch (err) {
 //     console.log(err);
@@ -119,7 +121,7 @@ router.get('/category/:id', async (req, res) => {
 
 // // route to get menuItems
 // router.get('/', async (req, res) => {
-//   const menuItemData = await menuItems.findAll().catch((err) => { 
+//   const menuItemData = await menuItems.findAll().catch((err) => {
 //       res.json(err);
 //     });
 //       const menuItems = menuItemData.map((menuItem) => menuItem.get({ plain: true }));
@@ -127,7 +129,7 @@ router.get('/category/:id', async (req, res) => {
 //     });
 
 
-    //get one menuItem
+//get one menuItem
 router.get('/menuItem/:id', async (req, res) => {
   try {
     const dbmenuItemData = await menuItem.findByPk(req.params.id);
@@ -154,13 +156,13 @@ router.get('/login', (req, res) => {
 
 
 // Show sign up page
-router.get("/signup", (req, res) => {
+router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
+    res.redirect('/');
+    return;
   }
 
   res.render('signup');
-})
+});
 
 module.exports = router;

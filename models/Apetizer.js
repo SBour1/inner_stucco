@@ -26,7 +26,7 @@ Apetizer.init(
     hasMeat: {
       type: DataTypes.BOOLEAN,
       allowNull: false
-  },
+    },
     hasNuts: {
       type: DataTypes.BOOLEAN,
     },
@@ -36,8 +36,8 @@ Apetizer.init(
         model: 'category',
         key: 'id',
       },
+    },
   },
-},
   {
     sequelize,
     freezeTableName: true,
