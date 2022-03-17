@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const seedCategory = require('./categoryData');
 const seedmenuItems = require('./menuItemsData');
-const seedApetizer = require('./apetizerData')
+const seedApetizer = require('./apetizerData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -10,7 +10,6 @@ const seedAll = async () => {
 
   await seedmenuItems();
 
- 
   await seedApetizer();
 
   process.exit(0);
@@ -50,13 +49,11 @@ seedAll();
 
 //   await seedmenuItems();
 
- 
 //   // await seedApetizer();
 
 //   // await seedPizza();
 //   // await seedDessert();
 
-  
 //   await Dessert.bulkCreate(dessertData, {
 //     individualHooks: true,
 //     returning: true,
