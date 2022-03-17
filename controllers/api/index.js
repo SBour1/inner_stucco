@@ -9,4 +9,10 @@ router.use('/menu', menuRoute);
 router.use('/order', orderRoute);
 router.use('/signup', signupRoute);
 
+
+const userRoutes = require('./user-routes');
+
+router.use('/users', userRoutes);
+
+
 module.exports = router;
