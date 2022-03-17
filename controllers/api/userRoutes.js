@@ -10,17 +10,17 @@ router.post('/signup-username', async (req, res) => {
     });
 
     if (userData === null) {
-      res.status(200).json({ message: "Username is unique" });
+      res.status(200).json({ message: 'Username is unique' });
 
       return;
     } else {
-      res.status(500).json({ message: "Username is not unique" });
+      res.status(500).json({ message: 'Username is not unique' });
     }
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Internal server error--- exists" });
+    res.status(500).json({ message: 'Internal server error--- exists' });
   }
-})
+});
 
 // Confirm email is unique
 router.post('/signup-email', async (req, res) => {
@@ -32,40 +32,40 @@ router.post('/signup-email', async (req, res) => {
     });
 
     if (!userData) {
-      res.status(200).json({ message: "Email is unique" });
+      res.status(200).json({ message: 'Email is unique' });
 
       return;
     } else {
-      res.status(500).json({ message: "Email is not unique" });
+      res.status(500).json({ message: 'Email is not unique' });
     }
   } catch (err) {
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: 'Internal server error' });
   }
-})
+});
 
 // Create new user
 router.post('/signup-create', async (req, res) => {
-    try {
-        const userData = await User.create({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password
-        })
+  try {
+    const userData = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
+    });
 
-        req.session.save( async () => {
-            // Once account is created, user is logged in
-            req.session.userId = await userData.id;
-            req.session.loggedIn = true;
+    req.session.save( async () => {
+      // Once account is created, user is logged in
+      req.session.userId = await userData.id;
+      req.session.loggedIn = true;
 
-            res.status(200).json({
-              user: userData,
-            });
-        })
-    } catch (err) {
-        res.status(500).json({ message: 'Sign up failed. Please try again!' });
-        console.error(err);
-    }
-})
+      res.status(200).json({
+        user: userData,
+      });
+    });
+  } catch (err) {
+    res.status(500).json({ message: 'Sign up failed. Please try again!' });
+    console.error(err);
+  }
+});
 
 // Log in
 router.post('/login', async (req, res) => {
@@ -113,17 +113,16 @@ router.post('/login', async (req, res) => {
         res.status(500).json(err);
       }
 })
-
 // Log out
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-          res.status(204).end();
-        });
-    } else {
-        res.status(404).end();
-    }
-})
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 
 module.exports = router;
