@@ -5,12 +5,12 @@ const Apetizer = require('./Apetizer');
 const Cart = require('./Order');
 
 Category.hasMany(menuItems, {
-    foreignKey: 'category_id',
-  });
+  foreignKey: 'category_id',
+});
 
-  menuItems.belongsTo(Category, {
-    foreignKey: 'category_id',
-  });
+menuItems.belongsTo(Category, {
+  foreignKey: 'category_id',
+});
 
 Cart.belongsTo(user);
 
