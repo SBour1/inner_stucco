@@ -23,11 +23,10 @@ async function signupFormHandler(event) {
       document.location.replace('/');
     } else {
       alert(response.statusText);
-      alert('User already exists');
-      console.log("User already exists");
+      // alert('User already exists');
+      // console.log("User already exists");
     }
   }
 }
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler); 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
