@@ -17,7 +17,7 @@ Order from Stucco's Pizzeria! Create an account, add items to your cart, and rec
 
 ## Installation
 
-Simply access the webpage at this [link](https://limitless-basin-23709.herokuapp.com/)
+Simply access the webpage at this [link](https://stuccos-pizzeria-23709.herokuapp.com/)
 
 ## Usage
 
