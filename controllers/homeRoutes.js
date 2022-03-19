@@ -72,6 +72,7 @@ router.get('/category/:id', async (req, res) => {
             'id',
             'name',
             'hasMeat',
+            'price',
             'hasNuts',
             'filename',
             'description',
@@ -171,7 +172,7 @@ router.get('/cart', async (req, res) => {
     include: [
       {
         model: menuItems,
-        attributes: ['filename', 'description'],
+        attributes: ['filename', 'description', 'price'],
       },
     ],
   });

@@ -16,7 +16,6 @@ Cart.init(
     price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true,
-      defaultValue: 0,
     }
   },
   {

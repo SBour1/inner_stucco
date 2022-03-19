@@ -2,7 +2,7 @@ const User = require('./user');
 const Category = require('./Category');
 const menuItems = require('./menuItems');
 const Apetizer = require('./Apetizer');
-const Cart = require('./Order');
+const Cart = require('./Cart');
 
 Category.hasMany(menuItems, {
   foreignKey: 'category_id',
