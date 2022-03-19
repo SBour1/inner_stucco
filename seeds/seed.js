@@ -1,20 +1,15 @@
 const sequelize = require('../config/connection');
 const seedCategory = require('./categoryData');
 const seedmenuItems = require('./menuItemsData');
-const seedApetizer = require('./apetizerData');
-const seedUser = require('./userData');
 const seedCart = require('./cartData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedUser();
 
   await seedCategory();
 
   await seedmenuItems();
-
-  await seedApetizer();
 
   await seedCart();
 
