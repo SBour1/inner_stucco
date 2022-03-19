@@ -22,13 +22,14 @@
             <a href="/" class="text-white">Home</a>
             <a href="/" class="text-white">Location</a>
             <a href="/menu" class="text-white">Menu</a>
-            <a href="/" class="text-white">About US</a>
-            <a href="/" class="text-white">Map</a>
+            {{!-- <a href="/" class="text-white">About US</a> --}}
+            {{!-- <a href="/" class="text-white">Map</a> --}}
             <a href="/" class="text-white">Contact Us</a>
             <a href="/mail" class="text-white">Send Mail</a>
             <a href="/login" class="text-white">My Order</a>
              {{#if loggedIn}}
                     <a class="text-white" id="logout">Log Out</a>
+                    <a href="/cart" class="text-white" id="cartValue">Cart</a>
                 {{else}}
                     <a href="/login" class="text-white">Log In</a>
                 {{/if}}

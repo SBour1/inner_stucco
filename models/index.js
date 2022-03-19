@@ -14,10 +14,10 @@ menuItems.belongsTo(Category, {
 
 Cart.belongsTo(User);
 
-Cart.belongsTo(menuItems);
+// Cart.belongsTo(menuItems);
 
-menuItems.hasMany(Cart);
+Cart.hasMany(menuItems);
 
-User.hasMany(Cart);
+User.hasOne(Cart);
 
 module.exports = { User, Category, menuItems, Cart, Apetizer};
