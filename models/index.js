@@ -1,7 +1,7 @@
 const User = require('./user');
 const Category = require('./Category');
 const menuItems = require('./menuItems');
-const Apetizer = require('./Apetizer');
+// const Apetizer = require('./Apetizer');
 const Cart = require('./Order');
 
 Category.hasMany(menuItems, {
@@ -20,4 +20,4 @@ menuItems.hasMany(Cart);
 
 User.hasMany(Cart);
 
-module.exports = { User, Category, menuItems, Cart, Apetizer};
+module.exports = { User, Category, menuItems, Cart};
