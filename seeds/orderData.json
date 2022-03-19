@@ -1,3 +1,4 @@
+// I do not think we need this file. The cart should be EMPTY until we add items to it. Using cartData.json over this
 [
   {
     "name": "Chicken Wings",

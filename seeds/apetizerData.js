@@ -12,7 +12,7 @@ const apetizerdata = [
   {
     'name': 'Garlic Knots',
     'price': 5.59,
-    'category_id': 1,
+    'category_id': 2,
     'hasMeat': false,
     'hasNuts': false,
     'description': 'Bread tied in knots and baked covered in a butter garlic and parsley spread.'

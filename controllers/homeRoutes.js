@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-use-before-define */
 const router = require('express').Router();
-const { Category, menuItems } = require('../models');
+const { Category, menuItems, Cart } = require('../models');
 const Apetizer = require('../models/Apetizer');
 const withAuth = require('../utils/auth');
 
@@ -163,6 +163,26 @@ router.get('/signup', (req, res) => {
   }
 
   res.render('signup');
+});
+
+// Cart route
+router.get('/cart', async (req, res) => {
+  const dbCartData = await Cart.findAll({
+    include: [
+      {
+        model: menuItems,
+        attributes: ['filename', 'description'],
+      },
+    ],
+  });
+
+  const cartItems = dbCartData.map((item) =>
+    item.get({ plain: true })
+  );
+
+  console.log( {cartItems} );
+  // Otherwise, render the 'cart' template
+  res.render('cart', { cartItems, loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;

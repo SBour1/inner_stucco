@@ -4,6 +4,7 @@ const { menuItems, Cart } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
+    console.log('Request body', req.body)
     var orderData = await Cart.create(req.body);
     console.log(orderData);
     res.status(200).json(orderData);
@@ -11,6 +12,13 @@ router.post('/', async (req, res) => {
     res.status(500).json(error);
   }
 });
+
+// router.delete('/:orderId', async(req, res) => {
+//   const id = req.query.orderId;
+
+
+
+// })
 
 router.get('/', async (req, res) => {
   try {

@@ -3,6 +3,7 @@ const seedCategory = require('./categoryData');
 const seedmenuItems = require('./menuItemsData');
 const seedApetizer = require('./apetizerData');
 const seedUser = require('./userData');
+const seedCart = require('./cartData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -14,6 +15,8 @@ const seedAll = async () => {
   await seedmenuItems();
 
   await seedApetizer();
+
+  await seedCart();
 
   process.exit(0);
 };
