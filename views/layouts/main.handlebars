@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.4.0/math.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -15,18 +16,13 @@
         <header class="d-flex align-items-center justify-content-around">
 
             <h1 class="">STUCCO'S PIZZERIA</h1>
-              {{!-- <h2>Welcome, {{username}}!</h2> --}}
-            {{!-- <div>Your total points is: 0</div> --}}
+             <h3>1234 Pizza Pl, Philadelpia, PA 19111</h3>
+             <h3>215-489-8317</h3>
+             <h3>Open 7 days a week! 11am - 11pm</h3>
         </header>
         <nav class="navbar p-3 p-md-4 justify-content-center">
             <a href="/" class="text-white">Home</a>
-            {{!-- <a href="/" class="text-white">Location</a> --}}
-            <a href="/menu" class="text-white">Menu</a>
-            {{!-- <a href="/" class="text-white">About US</a> --}}
-            {{!-- <a href="/" class="text-white">Map</a> --}}
-            <a href="/" class="text-white">Contact Us</a>
-            <a href="/mail" class="text-white">Send Mail</a>
-            <a href="/login" class="text-white">My Order</a>
+            <a href="mailto:stuccospizza@gmail.com" class="text-white">Contact Us</a>
              {{#if loggedIn}}
                     <a class="text-white" id="logout">Log Out</a>
                     <a href="/cart" class="text-white" id="cartValue">Cart</a>
@@ -46,10 +42,10 @@
         {{{body}}}
     </main>
 
-</body>
 
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
+<script src="/js/cart.js"></script>
 {{/if}} 
 
 </body>

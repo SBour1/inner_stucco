@@ -56,7 +56,7 @@ router.get('/category/:id', async (req, res) => {
 
 router.get('/menuItem/:id', async (req, res) => {
   try {
-    const dbmenuItemData = await menuItem.findByPk(req.params.id);
+    const dbmenuItemData = await menuItems.findByPk(req.params.id);
 
     const menuItem = dbmenuItemData.get({ plain: true });
 
