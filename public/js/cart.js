@@ -1,11 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 async function addToCart(e) {
   console.log('Button pressed');
-<<<<<<< HEAD
-  console.log({e});
-=======
   console.log({ e });
->>>>>>> d810e98ca2c1621e966d276b3c890156d4f8772b
   // console.log(name);
   // console.log(price);
   // console.log(description);
@@ -47,14 +43,14 @@ function total() {
       var price2 = parseFloat(items[i + 1].innerText.replace(/\D/g, ''));
       totalPrice += math.add(price1, price2);
       console.log(totalPrice);
+    } else {
+      totalPrice += price1;
     }
-    else {totalPrice += price1}
   }
-  totalPrice = totalPrice*.01
-  totalPrice = '$' + totalPrice
-  console.log(totalPrice)
-  document.querySelector('#total').innerHTML ="Total Price: " + totalPrice
-  // document.querySelector('#total').textContent = 'Total: $' + totalPrice;
+  totalPrice = totalPrice*.01;
+  totalPrice = '$' + totalPrice;
+  console.log(totalPrice);
+  document.querySelector('#total').innerHTML ='Total Price: ' + totalPrice;
 }
 
 total();
