@@ -6,13 +6,15 @@
                 <div class="my-3 card shadow-sm rounded post" data-order_id="{{id}}">
                     <div class="card-header bg-success text-white d-flex justify-content-between">
                         <h2 class="card-title">{{name}}</h2> 
-                        <h4>{{price}}</h3>
+                        {{!-- <h4 id="item-price">{{price}}</h4> --}}
                     </div>
                     <div class="card-body bg-light p-3">
                         <p>{{description}}</p>
                     </div>
+            
                 </div>
             {{/each}}
+            <button id='checkout-btn'>Finalize order</button>
         {{else}}
             <!-- Otherwise, show a link to login -->
             <a href="/login">Login</a>

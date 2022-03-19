@@ -14,6 +14,7 @@ async function addToCart(e) {
 
     const name = card.querySelector('#item-name').innerText;
     const description = card.querySelector('#item-description').innerText;
+    const price = card.querySelector('#item-price').innerText;
 
     console.log({ name, description });
 
@@ -22,7 +23,7 @@ async function addToCart(e) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name, description })
+        body: JSON.stringify({ name, description, price })
     }
     const response = await fetch('/api/order', requestOptions);
     const data = response.json();
